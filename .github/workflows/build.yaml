@@ -14,15 +14,15 @@ jobs:
         node-version: '17.x'
 
     - name: Install dependencies
-      working-directory: web
+      working-directory: web-app
       run: npm install
 
     - name: Run Unit Tests
-      working-directory: web
+      working-directory: web-app
       run: npm test      
    
     - name: Build the Docker image and push to AWS ECR
-      working-directory: web
+      working-directory: web-app
       run: |
         docker build -t besant .
       
